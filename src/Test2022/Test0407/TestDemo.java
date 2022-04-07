@@ -8,10 +8,13 @@ package Test2022.Test0407;
  * User:Zyt
  * Date:2022-04-07
  */
+class Money{
+    double m = 12.5;
+}
 class Person implements Cloneable{
     String name;
     int age;
-
+    public Money money = new Money();
     @Override
     public String toString() {
         return "Person{" +
@@ -35,10 +38,11 @@ public class TestDemo {
         Person person = new Person("小明");
         person.age = 25;
         Person person1 = (Person)person.clone();
-        System.out.println(person1);
+        System.out.println(person1.money.m);
         System.out.println("============");
         person1.age = 35;
-        System.out.println(person);
-        System.out.println(person1);
+        person1.money.m = 22.5;
+        System.out.println(person.money.m);
+        System.out.println(person1.money.m);
     }
 }
