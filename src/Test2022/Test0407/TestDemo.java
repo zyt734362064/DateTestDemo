@@ -8,8 +8,13 @@ package Test2022.Test0407;
  * User:Zyt
  * Date:2022-04-07
  */
-class Money{
+class Money implements Cloneable{
     double m = 12.5;
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
 class Person implements Cloneable{
     String name;
@@ -27,9 +32,12 @@ class Person implements Cloneable{
         this.name = name;
     }
 
+    //对 money 进行深拷贝
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        Person tmp = (Person)super.clone();
+        tmp.money = (Money)this.money.clone();
+        return tmp;
     }
 }
 
