@@ -12,7 +12,31 @@ import java.util.Arrays;
 public class TestDemo2 {
 
     public static void main(String[] args) {
+        String str = new String("1") + new String("1");
+        str.intern();
+        String str2 = new String("11");
+        String str1 = "11";
+        //true
+        System.out.println(str == str1);
+        //false
+        System.out.println(str2 == str1);
+        //true
+        System.out.println(str1.equals(str2));
+    }
 
+
+    public static void main4(String[] args) {
+        String str1 = "hello";
+        String str2 = "he" + "llow";
+        String str3 = "he";
+        String str4 = str3 + "llo";
+        String str5 = "hello";
+        //false
+        System.out.println(str1 == str2);
+        //false
+        System.out.println(str1 == str4);
+        //true
+        System.out.println(str1 == str5);
     }
 
 
