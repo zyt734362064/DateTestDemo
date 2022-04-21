@@ -10,6 +10,27 @@ import java.sql.Struct;
  */
 public class TestDemo1 {
     /**
+     * StringBuffer/StringBuilder 转为 String
+     * 调用toString 方法
+     * @return
+     */
+    public  static String func2(){
+        StringBuffer sb = new StringBuffer();
+        return sb.toString();
+    }
+    /**
+     * String 转化为 StringBuffer/StringBuilder
+     * 使用构造方法或者append 方法
+     * @return
+     */
+    public static StringBuffer func(){
+        String str = "123";
+        //return  new StringBuffer(str);
+        StringBuffer sb = new StringBuffer();
+        sb.append(str);
+        return sb;
+    }
+    /**
      * StringBuffer StringBuilder
      * @param args
      */
