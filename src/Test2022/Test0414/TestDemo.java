@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class TestDemo {
     public static void main(String[] args) {
-        String str = "Java 12&21#hello";
+        String str = "Java 12ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt&21#hello";
         String[] strings = str.split(" |&|#");
         for (String s:strings) {
             System.out.println(s);
