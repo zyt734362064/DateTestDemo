@@ -11,6 +11,28 @@ import java.util.Scanner;
  */
 public class TestDemo {
     public static void main(String[] args) {
+        func1(10);
+    }
+
+    public static void  func1(int x){
+        if (x == 10){
+            throw new RuntimeException("x = " + x);
+        }
+    }
+    public static void main3(String[] args) {
+        System.out.println(func());
+    }
+    public static int func(){
+        int a = 10;
+        try{
+            return a;
+        }catch (ArithmeticException e){
+            e.printStackTrace();
+        }finally {
+            return 20;
+        }
+    }
+    public static void main2(String[] args) {
         Scanner sc = new Scanner(System.in);
         try {
             int n = sc.nextInt();
