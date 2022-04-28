@@ -12,7 +12,7 @@ public class TestDemo {
         char[] chars = s.toCharArray();
         int i = 0;
         int j = chars.length - 1;
-        while (i < j && i < j - 1) {
+        while (i < j ) {
             if (chars[i] != chars[j]) {
                 return false;
             } else {
@@ -21,17 +21,17 @@ public class TestDemo {
             }
 
         }
-        if (i == j - 1) {
+        /*if (i == j - 1) {
             if (chars[i] != chars[j]) {
                 return false;
             }
 
-        }
+        }*/
         return true;
     }
 
     public static void main(String[] args) {
-        String s = "cccCBCCC";
+        String s = "ACcbA";
         TestDemo testDemo = new TestDemo();
         System.out.println(testDemo.isPaLindrome(s));
     }
