@@ -9,12 +9,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Create with IntelliJ IDEA
- * Description:
+ * Description:ArrayList
  * User:Zyt
  * Date:2022-04-29
  */
 public class TestDemo1 {
     public static void main(String[] args) {
+        //ArrayList 常见方法
         ArrayList<String> list2 = new ArrayList<>();
         list2.add("a");
         list2.add("b");
@@ -27,6 +28,19 @@ public class TestDemo1 {
         list.add("夏天");
         list2.addAll(list);
         System.out.println(list2);
+/*        Boolean ret = list2.remove("c");
+        System.out.println(ret);
+        System.out.println(list2);*/
+        String ret = list2.set(2,"789");
+        list2.add(2,"789");
+        list2.add(2,"789");
+        System.out.println(ret);
+        //list2.clear();
+        System.out.println(list2);
+        System.out.println(list2.contains("春天"));
+        System.out.println(list2.lastIndexOf("789"));
+        List<String> list1 = list2.subList(1,3);
+        System.out.println(list1);
     }
     public static void main3(String[] args) {
         ArrayList<String> list2 = new ArrayList<>();
