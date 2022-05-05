@@ -14,7 +14,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * Date:2022-04-29
  */
 public class TestDemo1 {
+
     public static void main(String[] args) {
+        ArrayList<String> list1 = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>(13);
+    }
+    public static void main4(String[] args) {
         //ArrayList 常见方法
         ArrayList<String> list2 = new ArrayList<>();
         list2.add("a");
