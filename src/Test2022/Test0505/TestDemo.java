@@ -1,5 +1,7 @@
 package Test2022.Test0505;
 
+import java.util.Arrays;
+
 /**
  * Create with IntelliJ IDEA
  * Description:
@@ -64,6 +66,7 @@ class MyArrayList<E>{
         if (newCapacity - MAX_ARRAY_SIZE > 0){
             newCapacity = hugeCapacity(minCapacity);
         }
+        elementData = Arrays.copyOf(elementData, newCapacity);
     }
 
     private static int hugeCapacity(int minCapacity) {
@@ -84,7 +87,9 @@ class MyArrayList<E>{
     }
 
     public void add(int index,E e){
+        //1、确定index 位置
         rangeChangeForAdd(index);
+        //2、确定真正的容量
         ensureCapacityInternal(usedSize + 1);
         copy(index,e);
         usedSize++;
@@ -111,7 +116,13 @@ class MyArrayList<E>{
 
 public class TestDemo {
     public static void main(String[] args) {
-
+        MyArrayList<String> myArrayList = new MyArrayList<>();
+        myArrayList.add("a");
+        myArrayList.add("ab");
+        myArrayList.add("abc");
+        myArrayList.add("abcd");
+        myArrayList.add(4,"zzz");
+        System.out.println(myArrayList);
     }
 
 }
