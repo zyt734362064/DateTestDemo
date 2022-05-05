@@ -83,6 +83,30 @@ class MyArrayList<E>{
         return minCapacity;
     }
 
+    public void add(int index,E e){
+        rangeChangeForAdd(index);
+        ensureCapacityInternal(usedSize + 1);
+        copy(index,e);
+        usedSize++;
+    }
+
+    private void rangeChangeForAdd(int index) {
+        if(index < 0 || index >size()){
+            throw new IndexOutOfBoundsException("index位置不合法");
+        }
+    }
+
+    private void copy(int index,E e){
+        for (int i = usedSize - 1; i >= index ; i--) {
+            elementData[i + 1] = elementData[i];
+        }
+        elementData[index] = e;
+    }
+
+    private int size() {
+        return this.usedSize;
+    }
+
 }
 
 public class TestDemo {
